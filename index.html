@@ -1553,6 +1553,12 @@
                     if (idx === currentIdx || isAnimating) return;
                     const targetPos = (idx / (total - 1)) * (fixedSection.offsetHeight - window.innerHeight);
                     window.scrollTo({ top: targetPos, behavior: 'smooth' });
+                    const progress = idx / (total - 1);
+                    const start = fixedSection.offsetTop;
+                    const end = fixedSection.offsetTop + fixedSection.offsetHeight - window.innerHeight;
+                    const targetPos = start + (progress * (end - start));
+                    
+                    lenis.scrollTo(targetPos, { duration: 1.2 });
                 }
 
                 buildFX();
