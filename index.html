@@ -1077,7 +1077,7 @@
     </header>
 
     <!-- ====== HERO ====== -->
-    <section class="hero" id="hero">
+    <section class="hero" id="hero" aria-label="Accueil">
         <video class="hero-video" autoplay loop muted playsinline preload="auto" poster="images/hero-poster.jpg">
             <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4" type="video/mp4">
         </video>
@@ -1089,7 +1089,7 @@
     </section>
 
     <!-- ====== ABOUT ====== -->
-    <div class="container-section" id="about">
+    <section class="container-section" id="about" aria-label="À propos">
         <div class="about-grid reveal">
             <div class="about-photo" id="tilt-container">
                 <img class="tilt-image" src="images/me.png" alt="Portrait de KPANOU Kenneth" loading="lazy">
@@ -1117,10 +1117,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- ====== FULLSCREEN PORTFOLIO ====== -->
-    <div class="fullscreen-fx" id="portfolio">
+    <section class="fullscreen-fx" id="portfolio" aria-label="Mes réalisations">
         <div class="fx-scroll">
             <div class="fx-fixed-section" id="fx-fixed-section">
                 <div class="fx-fixed" id="fx-fixed">
@@ -1142,10 +1142,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- ====== CLIENTS ====== -->
-    <div class="clients-section reveal" id="clients">
+    <section class="clients-section reveal" id="clients" aria-label="Témoignages">
         <div class="clients-title">Ils m'ont fait confiance</div>
         <div class="testimonials">
             <div class="testi-card"><i class="fas fa-quote-right"></i><p>"La galerie expansive et le fullscreen scroll apportent une dimension cinématique unique."</p><div class="client-logo">✦ Maison Altesse</div></div>
@@ -1158,10 +1158,10 @@
             <span style="font-weight:500; color:#222;">Vogue Digital</span>
             <span style="font-weight:500; color:#222;">Behance Featured</span>
         </div>
-    </div>
+    </section>
 
     <!-- ====== CONTACT ====== -->
-    <div class="container-section" id="contact" style="position:relative;">
+    <section class="container-section" id="contact" style="position:relative;" aria-label="Contact">
         <div class="contact-wrapper">
             <div class="contact-section">
                 <div class="contact-info reveal">
@@ -1190,7 +1190,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- ====== FOOTER ====== -->
     <footer class="footer-cyber">
@@ -1551,13 +1551,12 @@
 
                 function goToSection(idx) {
                     if (idx === currentIdx || isAnimating) return;
-                    const targetPos = (idx / (total - 1)) * (fixedSection.offsetHeight - window.innerHeight);
-                    window.scrollTo({ top: targetPos, behavior: 'smooth' });
+                    // On calcule la position exacte par rapport au scroll total de la section fixe
                     const progress = idx / (total - 1);
                     const start = fixedSection.offsetTop;
                     const end = fixedSection.offsetTop + fixedSection.offsetHeight - window.innerHeight;
                     const targetPos = start + (progress * (end - start));
-                    
+
                     lenis.scrollTo(targetPos, { duration: 1.2 });
                 }
 
