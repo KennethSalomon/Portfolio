@@ -1069,7 +1069,6 @@
                     <a href="#hero" class="active">Home</a>
                     <a href="#portfolio">Studio</a>
                     <a href="#about">About me</a>
-                    <a href="#portfolio">Realisation</a>
                     <a href="#contact">Contact me</a>
                 </div>
                 <a href="#contact" class="btn-glass">Un project ? parlons en →</a>
@@ -1216,7 +1215,6 @@
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#portfolio">Studio</a></li>
                     <li><a href="#about">About me</a></li>
-                    <li><a href="#portfolio">Realisation</a></li>
                     <li><a href="#contact">Contact me</a></li>
                     <li><a href="#contact">Un project ? parlons en →</a></li>
                 </ul>
@@ -1374,8 +1372,8 @@
 
                 // --- INITIALISATION LENIS (Correction chirurgicale du Lag) ---
                 const lenis = new Lenis({
-                    duration: 1.2,
-                    lerp: 0.12, // Valeur augmentée pour supprimer le décalage de "quelques secondes"
+                    duration: 1,
+                    lerp: 0.18, // Valeur optimisée pour une réactivité maximale
                     wheelMultiplier: 1,
                     gestureOrientation: 'vertical',
                     normalizeWheel: true,
@@ -1756,8 +1754,8 @@
                     const scrollPos = window.scrollY + 100;
                     const sections = {
                         'hero': document.getElementById('hero'),
-                        'portfolio': document.getElementById('portfolio'),
                         'about': document.getElementById('about'),
+                            'portfolio': document.getElementById('portfolio'),
                         'contact': document.getElementById('contact')
                     };
                     let activeId = 'hero';
