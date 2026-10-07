@@ -1,0 +1,5 @@
+# Remplacer kennethkpanou.example par le domaine réel une fois le site en ligne.
+User-agent: *
+Allow: /
+
+Sitemap: https://kennethkpanou.example/sitemap.xml
