@@ -43,6 +43,7 @@ body {
 }
 body.no-scroll { overflow: hidden; }
 img { display: block; max-width: 100%; }
+picture { display: contents; }
 figure { margin: 0; }
 a { color: inherit; }
 button { font: inherit; color: inherit; }
